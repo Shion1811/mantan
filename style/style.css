@@ -1,0 +1,17 @@
+/* 初期設定 */
+
+:root {
+    --color-white: #FFF8F0;
+    --color-black: #333333;
+    --color-brown: #8B4C39;
+    --color-gray: #D9D9D9;
+    --color-green: #A6B97D;
+    --color-orange: #FF8438;
+    --color-blue: #C8FFFF;
+
+    --font-h1: 36px;
+    --font-h2: 32px;
+    --font-h3: 24px;
+    --font-p: 20px;
+    --font-p-small: 16px;
+}
