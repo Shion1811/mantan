@@ -127,3 +127,6 @@
 	border: 0 !important;
 	user-select: none !important;
 }
+:where(a) {
+	text-decoration: none;
+}
