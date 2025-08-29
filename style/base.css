@@ -20,5 +20,24 @@
     --drop-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.25);
 
     --width-container: 1190px;
-    --height-container: 781px;
+    --height-container: 780px;
+}
+html {
+    width: 1190px;
+    height: 780px;
+    margin: auto;
+    background: #fff;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+}
+
+body{
+    width: 100%;
+    max-width: var(--width-container);
+    height: 100%;
+    max-height: var(--height-container);
+    margin: 0 auto;
+    background: var(--color-brown);
+    box-sizing: border-box;
 }
