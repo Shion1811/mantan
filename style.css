@@ -1,11 +1,6 @@
 @charset "utf-8";
 
 
-body{
-    width: 1280;
-    height: 800;
-    opacity: 1;
-}
 
 
 section{
@@ -13,7 +8,7 @@ section{
     width: 704px;
     height: 284px;
     top: 260px;
-    left: 340px;
+    left: 360px;
     gap: 111px;
     opacity: 1;
     /* 準備 */
@@ -37,7 +32,7 @@ h2{
     font-weight: 400;
     font-style: Regular;
     font-size: 32px;
-    line-height: 100%;
+    line-height: 270%;
     letter-spacing: 0%;
 }
 .salesperson{
@@ -59,12 +54,17 @@ h2{
 
 .yes{
     background-color: #C8FFFF;
+    text-align: center;
+    border-radius: 20px;
     width: 180px;
     height: 130px;
     opacity: 1;
+    
 }
 .no{
     background-color: #FF8438;
+    text-align: center;
+    border-radius: 20px;
     width: 180px;
     height: 130px;
     opacity: 1;
