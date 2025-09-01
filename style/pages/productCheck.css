@@ -5,6 +5,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
 .product-check-image{
     width: 110px;
@@ -131,7 +132,7 @@ body{
     background-color: var(--color-white);
     position: fixed; 
     right: calc(50% - 595px + 30px); 
-    top: 130px; 
+    top: 170px; 
     flex-shrink: 0; 
     align-self: flex-start; 
     margin-left: auto; 
@@ -151,4 +152,9 @@ body{
     overflow-x: hidden;
     scrollbar-width: thin;
     scrollbar-color: var(--color-gray) transparent;
+}
+.order-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
 }
