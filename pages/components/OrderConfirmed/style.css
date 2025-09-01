@@ -1,4 +1,4 @@
-.cole-clerk-container{
+.order-confirmed-container{
     width: 170px;
     height: 110px;
     background-color: var(--color-brown);
@@ -10,6 +10,6 @@
     box-shadow: var(--drop-shadow);
     text-align: center;
 }
-.cole-clerk-container h3{
+.order-confirmed-container h3{
     color: var(--color-white);
 }
