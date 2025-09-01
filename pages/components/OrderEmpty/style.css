@@ -1,0 +1,15 @@
+.cole-clerk-container{
+    width: 170px;
+    height: 130px;
+    background-color: var(--color-brown);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: var(--drop-shadow);
+    text-align: center;
+}
+.cole-clerk-container h3{
+    color: var(--color-white);
+}
