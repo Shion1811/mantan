@@ -78,6 +78,8 @@
 	max-inline-size: 100%;
 	block-size: auto;
 }
+/* フォントサイズの設定 */
+:where(p, h1, h2, h3, h4, h5, h6) {
 	overflow-wrap: break-word;
 }
 
