@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/24reset.css">
+    <link rel="stylesheet" href="../style/base.css">
+    <link rel="stylesheet" href="../style/pages/productCheck.css">
+    <title>商品確認画面</title>
+</head>
+<body>
+    <!--  上のメニューバー -->
+    <div class="menu-container">
+        <!-- ColeClerkコンポーネントを読み込み -->
+        <div data-include="components/BackMenu/index.html"></div>
+        <div data-include="components/ColeClerk/index.html"></div>
+    </div>
+    <!-- 商品確認画面 -->
+    <div class="product-check-container">
+        <!-- 仮置きの画像 -->
+        <img class="product-check-image" src="../images/IMG_8903.jpg" alt="商品画像">
+        <div class="product-check-info">
+            <h3 class="product-check-info-title">ハンバーグ定食</h3>
+            <div class="product-check-info-price-container">
+                <h3 class="product-check-info-price">XXX円</h3>
+                <button class="product-check-info-delete">
+                    <h3 class="product-check-info-delete-text">取消</h3>
+                </button>
+            </div>
+        </div>
+        <div class="product-check-count">
+            <button class="product-check-count-minus" id="minus-button"><span></span></button>
+            <h2 class="product-check-count-number" id="count-number">1</h2>
+            <button class="product-check-count-plus" id="plus-button"><span></span></button>
+        </div>
+    </div>
+    <!-- コンポーネント読み込みスクリプト -->
+    <script src="components/component-loader.js"></script>
+    <script src="../js/productCheck.js"></script>
+</body>
+</html>

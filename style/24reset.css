@@ -77,13 +77,31 @@
 	block-size: auto;
 }
 
-:where(p, h1, h2, h3, h4, h5, h6) {
+:where(p, h1, h2, h3,p) {
 	overflow-wrap: break-word;
 }
 
 :where(h1, h2, h3) {
 	line-height: calc(1em + 0.5rem);
 	text-wrap: balance;
+}
+h1,h2,h3,p{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif, "Noto Sans JP";
+	font-weight: 400;
+}
+h1{
+	font-size: 36px;
+}
+h2{
+	font-size: 32px;
+}
+h3{
+	font-size: 24px;
+}
+p{
+	font-size: 16px;
 }
 
 :where(hr) {
@@ -129,4 +147,12 @@
 }
 :where(a) {
 	text-decoration: none;
+}
+* {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
