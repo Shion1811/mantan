@@ -3,9 +3,10 @@
 // スクロール同期機能
 function syncScroll() {
     const container = document.querySelector('.product-check-container');
+    const sideBar = document.querySelector('.side-bar');
     const innerSideBar = document.querySelector('.inner-side-bar');
     
-    if (!container || !innerSideBar) return;
+    if (!container || !sideBar || !innerSideBar) return;
     
     // コンテナのスクロールイベントを監視
     container.addEventListener('scroll', function() {
@@ -20,16 +21,16 @@ function syncScroll() {
             // スクロール位置の割合を計算（0〜1）
             const scrollRatio = scrollTop / maxScroll;
             
-            // inner-side-barの高さを取得
+            // side-barとinner-side-barの高さを取得
+            const sideBarHeight = sideBar.offsetHeight;
             const innerSideBarHeight = innerSideBar.offsetHeight;
-            const containerHeight = container.offsetHeight;
             
-            // inner-side-barの移動可能な範囲を計算
-            const moveableRange = containerHeight - innerSideBarHeight;
+            // inner-side-barの移動可能な範囲を計算（side-barの境界内）
+            const moveableRange = sideBarHeight - innerSideBarHeight;
             
             if (moveableRange > 0) {
-                // inner-side-barの位置を調整
-                const newTop = scrollRatio * moveableRange;
+                // inner-side-barの位置を調整（side-barの境界内に制限）
+                const newTop = Math.min(scrollRatio * moveableRange, moveableRange);
                 innerSideBar.style.transform = `translateY(${newTop}px)`;
             }
         }
