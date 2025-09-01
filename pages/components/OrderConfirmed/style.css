@@ -1,7 +1,7 @@
 .cole-clerk-container{
     width: 170px;
     height: 110px;
-    background-color: var(--color-orange);
+    background-color: var(--color-brown);
     display: flex;
     flex-direction: column;
     justify-content: center;
