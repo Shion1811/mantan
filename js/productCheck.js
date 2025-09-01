@@ -4,8 +4,9 @@
 function syncScroll() {
     const container = document.querySelector('.product-check-container');
     const innerSideBar = document.querySelector('.inner-side-bar');
+    const sideBar = document.querySelector('.side-bar');
     
-    if (!container || !innerSideBar) return;
+    if (!container || !innerSideBar || !sideBar) return;
     
     // コンテナのスクロールイベントを監視
     container.addEventListener('scroll', function() {
@@ -20,16 +21,16 @@ function syncScroll() {
             // スクロール位置の割合を計算
             const scrollRatio = scrollTop / maxScroll;
             
-            // inner-side-barの高さを取得
+            // side-barの高さを取得
+            const sideBarHeight = sideBar.offsetHeight;
             const innerSideBarHeight = innerSideBar.offsetHeight;
-            const containerHeight = container.offsetHeight;
             
-            // inner-side-barの移動可能な範囲を計算
-            const moveableRange = containerHeight - innerSideBarHeight;
+            // inner-side-barの移動可能な範囲を計算（side-barの境界内）
+            const moveableRange = sideBarHeight - innerSideBarHeight;
             
             if (moveableRange > 0) {
-                // inner-side-barの位置を調整
-                const newTop = scrollRatio * moveableRange;
+                // inner-side-barの位置を調整（side-barの境界内に制限）
+                const newTop = Math.min(scrollRatio * moveableRange, moveableRange);
                 innerSideBar.style.transform = `translateY(${newTop}px)`;
             }
         }
@@ -44,41 +45,17 @@ function initializeCount() {
     
     let count = 1;
     
-    // ボタンの色を更新する関数
-    function updateButtonColors() {
-        if (count === 1) {
-            // 1の時: minusがgray、plusがwhite
-            minusButton.style.backgroundColor = 'var(--color-gray)';
-            plusButton.style.backgroundColor = 'var(--color-white)';
-        } else if (count >= 2 && count <= 4) {
-            // 2~4の時: 両方ともwhite
-            minusButton.style.backgroundColor = 'var(--color-white)';
-            plusButton.style.backgroundColor = 'var(--color-white)';
-        } else if (count === 5) {
-            // 5の時: 1の色を反対（minusがwhite、plusがgray）
-            minusButton.style.backgroundColor = 'var(--color-white)';
-            plusButton.style.backgroundColor = 'var(--color-gray)';
-        }
-    }
-    
     minusButton.addEventListener('click', function() {
         if (count > 1) {
             count--;
             countNumber.textContent = count;
-            updateButtonColors();
         }
     });
     
     plusButton.addEventListener('click', function() {
-        if (count < 5) {
-            count++;
-            countNumber.textContent = count;
-            updateButtonColors();
-        }
+        count++;
+        countNumber.textContent = count;
     });
-    
-    // 初期状態のボタン色を設定
-    updateButtonColors();
 }
 
 // ページ読み込み完了時に初期化
