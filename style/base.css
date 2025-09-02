@@ -30,6 +30,8 @@ body{
     margin: 0 auto;
     box-sizing: border-box;
 }
+<<<<<<< HEAD
+=======
 
 .container{
     aspect-ratio: 1280 / 800;
@@ -71,3 +73,4 @@ img, button, input, textarea, select {
         border-radius: 20px;
     }
 }
+>>>>>>> 1a473905dc7c3fa91499c7ec66fa529d5b1b1a3f
