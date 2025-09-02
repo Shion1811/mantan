@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/24reset.css">
+    <link rel="stylesheet" href="../style/base.css">
+    <link rel="stylesheet" href="../style/pages/productCheck.css">
+    <title>商品確認画面</title>
+</head>
+<body>
+    <!--  上のメニューバー -->
+    <div class="menu-container">
+        <!-- ColeClerkコンポーネントを読み込み -->
+        <div data-include="components/BackMenu/index.html"></div>
+        <div data-include="components/ColeClerk/index.html"></div>
+    </div>
+    <!-- 商品確認画面 -->
+    <div class="product-check-container">
+        <!-- 仮置きの画像 -->
+        <!-- 1つ目 -->
+        <div class="product-check-image-container">
+            <img class="product-check-image" src="../images/IMG_8903.jpg" alt="商品画像">
+            <div class="product-check-info">
+                <h3 class="product-check-info-title">ハンバーグ定食</h3>
+                <div class="product-check-info-price-container">
+                    <h3 class="product-check-info-price">XXX円</h3>
+                    <button class="product-check-info-delete">
+                        <h3 class="product-check-info-delete-text">取消</h3>
+                    </button>
+                </div>
+            </div>
+            <div class="product-check-count">
+                <button class="product-check-count-minus" id="minus-button-1"><span></span></button>
+                <h2 class="product-check-count-number" id="count-number-1">1</h2>
+                <button class="product-check-count-plus" id="plus-button-1"><span></span></button>
+            </div>
+        </div>
+        <!-- 二つ目 -->
+        <div class="product-check-image-container">
+            <img class="product-check-image" src="../images/IMG_8903.jpg" alt="商品画像">
+            <div class="product-check-info">
+                <h3 class="product-check-info-title">ハンバーグ定食</h3>
+                <div class="product-check-info-price-container">
+                    <h3 class="product-check-info-price">XXX円</h3>
+                    <button class="product-check-info-delete">
+                        <h3 class="product-check-info-delete-text">取消</h3>
+                    </button>
+                </div>
+            </div>
+            <div class="product-check-count">
+                <button class="product-check-count-minus" id="minus-button-2"><span></span></button>
+                <h2 class="product-check-count-number" id="count-number-2">1</h2>
+                <button class="product-check-count-plus" id="plus-button-2"><span></span></button>
+            </div>
+        </div>
+        <!-- 三つ目 -->
+        <div class="product-check-image-container">
+            <img class="product-check-image" src="../images/IMG_8903.jpg" alt="商品画像">
+            <div class="product-check-info">
+                <h3 class="product-check-info-title">ハンバーグ定食</h3>
+                <div class="product-check-info-price-container">
+                    <h3 class="product-check-info-price">XXX円</h3>
+                    <button class="product-check-info-delete">
+                        <h3 class="product-check-info-delete-text">取消</h3>
+                    </button>
+                </div>
+            </div>
+            <div class="product-check-count">
+                <button class="product-check-count-minus" id="minus-button-3"><span></span></button>
+                <h2 class="product-check-count-number" id="count-number-3">1</h2>
+                <button class="product-check-count-plus" id="plus-button-3"><span></span></button>
+            </div>
+        </div>
+        <!-- 四つ目 -->
+        <div class="product-check-image-container">
+            <img class="product-check-image" src="../images/IMG_8903.jpg" alt="商品画像">
+            <div class="product-check-info">
+                <h3 class="product-check-info-title">ハンバーグ定食</h3>
+                <div class="product-check-info-price-container">
+                    <h3 class="product-check-info-price">XXX円</h3>
+                    <button class="product-check-info-delete">
+                        <h3 class="product-check-info-delete-text">取消</h3>
+                    </button>
+                </div>
+            </div>
+            <div class="product-check-count">
+                <button class="product-check-count-minus" id="minus-button-4"><span></span></button>
+                <h2 class="product-check-count-number" id="count-number-4">1</h2>
+                <button class="product-check-count-plus" id="plus-button-4"><span></span></button>
+            </div>
+        </div>
+        <!-- 五つ目 -->
+        <div class="product-check-image-container">
+            <img class="product-check-image" src="../images/IMG_8903.jpg" alt="商品画像">
+            <div class="product-check-info">
+                <h3 class="product-check-info-title">ハンバーグ定食</h3>
+                <div class="product-check-info-price-container">
+                    <h3 class="product-check-info-price">XXX円</h3>
+                    <button class="product-check-info-delete">
+                        <h3 class="product-check-info-delete-text">取消</h3>
+                    </button>
+                </div>
+            </div>
+            <div class="product-check-count">
+                <button class="product-check-count-minus" id="minus-button-5"><span></span></button>
+                <h2 class="product-check-count-number" id="count-number-5">1</h2>
+                <button class="product-check-count-plus" id="plus-button-5"><span></span></button>
+            </div>
+        </div>
+        <!-- 六つ目 --><div class="product-check-image-container">
+            <img class="product-check-image" src="../images/IMG_8903.jpg" alt="商品画像">
+            <div class="product-check-info">
+                <h3 class="product-check-info-title">デカ盛りスーパーハイパー大盛り白米</h3>
+                <div class="product-check-info-price-container">
+                    <h3 class="product-check-info-price">XXX円</h3>
+                    <button class="product-check-info-delete">
+                        <h3 class="product-check-info-delete-text">取消</h3>
+                    </button>
+                </div>
+            </div>
+            <div class="product-check-count">
+                <button class="product-check-count-minus" id="minus-button"><span></span></button>
+                <h2 class="product-check-count-number" id="count-number">1</h2>
+                <button class="product-check-count-plus" id="plus-button"><span></span></button>
+            </div>
+        </div>
+        <!-- 七つ目 -->
+        <div class="product-check-image-container">
+            <img class="product-check-image" src="../images/IMG_8903.jpg" alt="商品画像">
+            <div class="product-check-info">
+                <h3 class="product-check-info-title">じゅんぺいチャレンジ早食い</h3>
+                <div class="product-check-info-price-container">
+                    <h3 class="product-check-info-price">XXX円</h3>
+                    <button class="product-check-info-delete">
+                        <h3 class="product-check-info-delete-text">取消</h3>
+                    </button>
+                </div>
+            </div>
+            <div class="product-check-count">
+                <button class="product-check-count-minus" id="minus-button"><span></span></button>
+                <h2 class="product-check-count-number" id="count-number">1</h2>
+                <button class="product-check-count-plus" id="plus-button"><span></span></button>
+            </div>
+        </div>
+        <!-- 八つ目 -->
+        <div class="product-check-image-container">
+            <img class="product-check-image" src="../images/IMG_8903.jpg" alt="商品画像">
+            <div class="product-check-info">
+                <h3 class="product-check-info-title">上野動物園れお握りプレート</h3>
+                <div class="product-check-info-price-container">
+                    <h3 class="product-check-info-price">XXX円</h3>
+                    <button class="product-check-info-delete">
+                        <h3 class="product-check-info-delete-text">取消</h3>
+                    </button>
+                </div>
+            </div>
+            <div class="product-check-count">
+                <button class="product-check-count-minus" id="minus-button"><span></span></button>
+                <h2 class="product-check-count-number" id="count-number">1</h2>
+                <button class="product-check-count-plus" id="plus-button"><span></span></button>
+            </div>
+        </div>
+        <span class="side-bar">
+            <span class="inner-side-bar"></span>
+        </span>
+    </div>
+    <div class="order-container">
+        <div data-include="components/OrderEmpty/index.html"></div>
+        <div data-include="components/OrderConfirmed/index.html"></div>
+    </div>
+    <!-- コンポーネント読み込みスクリプト -->
+    <script src="components/component-loader.js"></script>
+    <script src="../js/productCheck.js"></script>
+</body>
+</html>
