@@ -32,7 +32,7 @@ h2{
     font-weight: 400;
     font-style: Regular;
     font-size: 32px;
-    line-height: 270%;
+    line-height: 300%;
     letter-spacing: 0%;
 }
 .salesperson{
@@ -59,7 +59,6 @@ h2{
     width: 180px;
     height: 130px;
     opacity: 1;
-    
 }
 .no{
     background-color: #FF8438;
