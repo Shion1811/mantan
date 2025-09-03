@@ -8,9 +8,8 @@
     align-items: center;
     border-radius: 20px;
     box-shadow: var(--drop-shadow);
+    text-align: center;
 }
 .back-menu-container h3{
-    font-family: var(--font-family);
-    font-size: var(--font-h3);
-    font-weight: var(--font-weight);
+    color: var(--color-black);
 }

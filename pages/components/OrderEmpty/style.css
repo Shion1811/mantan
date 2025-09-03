@@ -1,7 +1,7 @@
-.cole-clerk-container{
+.order-empty-container{
     width: 170px;
-    height: 110px;
-    background-color: var(--color-orange);
+    height: 130px;
+    background-color: var(--color-brown);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,6 +10,6 @@
     box-shadow: var(--drop-shadow);
     text-align: center;
 }
-.cole-clerk-container h3{
-    color: var(--color-black);
+.order-empty-container h3{
+    color: var(--color-white);
 }
