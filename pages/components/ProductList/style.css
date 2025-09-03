@@ -1,0 +1,39 @@
+.product-list-container{
+    width: 289px;
+    height: 250px;
+    background-color: var(--color-white);
+    border-radius: 30px;
+    box-shadow: var(--drop-shadow);
+    display: flex;
+    flex-direction: column;
+}
+.product-list-allergy-list{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: start;
+    row-gap: 5px;
+    column-gap: 10px;
+}
+/* アレルギーリストの画像 */
+.product-list-allergy-list img{
+    width: 14px;
+    height: 14px;
+    max-width: 14px;
+    max-height: 14px;
+}
+/* 商品画像 */
+.product-list-container img{
+    width: 290px;
+    height: 145px;
+    border-radius: 30px 30px 0 0;
+}
+.product-list-title-container{
+    text-align: end;
+    padding: 10px 10px 0 0;
+}
+.product-list-info-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 10px 10px;
+}
