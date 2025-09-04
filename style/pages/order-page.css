@@ -1,0 +1,14 @@
+.bg-water{
+    background-image: url(../../images/water.png);
+    width: 600px;
+    height: 517px;
+}
+.bg-juce{
+    background-image: url(../../images/juce.png);
+    width: 600px;
+    height: 517px;
+}
+.sec-container{
+    display: flex;
+    padding-top: 129px;
+}
