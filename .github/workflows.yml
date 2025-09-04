@@ -1,0 +1,30 @@
+name: Update feature branches with dev
+on:
+  push:
+    branches: ["dev"]
+
+permissions:
+  contents: write
+
+jobs:
+  update-feature-branches:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Update feature branches
+        run: |
+          # すべてのブランチを取得
+          git fetch --all
+          
+          # フィーチャーブランチを更新（mainとdev以外）
+          for branch in $(git branch -r | grep -v 'origin/main' | grep -v 'origin/dev' | sed 's/origin\///'); do
+            echo "Updating branch: $branch"
+            git checkout $branch
+            git pull origin $branch
+            git merge origin/dev --no-edit
+            git push origin $branch
+          done
