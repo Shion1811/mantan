@@ -11,8 +11,8 @@
 
     --drop-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.25);
 
-    --width-container: 1280px;
-    --height-container: 800px;
+    --width-container: 1192px;
+    --height-container: 781px;
 }
 
 html {
@@ -26,12 +26,10 @@ html {
 
 body{
     width: 100%;
-    max-width: var(--width-container);
+    max-width: 1280px;
     margin: 0 auto;
     box-sizing: border-box;
 }
-<<<<<<< HEAD
-=======
 
 .container{
     aspect-ratio: 1280 / 800;
@@ -73,4 +71,3 @@ img, button, input, textarea, select {
         border-radius: 20px;
     }
 }
->>>>>>> 1a473905dc7c3fa91499c7ec66fa529d5b1b1a3f
