@@ -8,11 +8,7 @@
     align-items: center;
     border-radius: 20px;
     box-shadow: var(--drop-shadow);
-<<<<<<< HEAD
     margin: 0 0 0 auto;
-=======
-    text-align: center;
->>>>>>> 1a473905dc7c3fa91499c7ec66fa529d5b1b1a3f
 }
 .cole-clerk-container h3{
     color: var(--color-black);

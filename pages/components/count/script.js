@@ -56,7 +56,9 @@ function initializeCount() {
     });
 }
 
-// ページ読み込み完了時に初期化
+// ページ読み込み完了時に初期化（少し遅延させてコンポーネント読み込みを待つ）
 document.addEventListener('DOMContentLoaded', function() {
-    initializeCount();
+    setTimeout(function() {
+        initializeCount();
+    }, 100);
 });
