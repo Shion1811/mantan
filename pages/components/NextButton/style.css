@@ -1,4 +1,4 @@
-.cole-clerk-container{
+.next-menu-button{
     width: 170px;
     height: 110px;
     background-color: var(--color-orange);
@@ -8,8 +8,14 @@
     align-items: center;
     border-radius: 20px;
     box-shadow: var(--drop-shadow);
-    margin: 0 0 0 auto;
+    text-align: center;
 }
-.cole-clerk-container h3{
+.next-menu-button h3{
     color: var(--color-black);
 }
+
+
+
+
+
+
