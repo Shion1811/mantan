@@ -69,5 +69,7 @@ img, button, input, textarea, select {
         /* borderはデバッグ用で本番は消す */
         border: 1px solid #333333;
         border-radius: 20px;
+        overflow: hidden;
+	    height: 800px;
     }
 }
