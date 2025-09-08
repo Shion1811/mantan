@@ -1,0 +1,40 @@
+html, body {
+    height: 100%;
+    width:  var(--width-container);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-size: 36px;
+}
+
+
+
+.main-container {
+    text-align: center; /* テキスト中央寄せ（任意） */
+}
+/* .main-container h1{
+    padding-bottom: 81px;
+}
+
+.main-container a{
+    font-size: 20px;
+    padding-bottom: 81px;
+    width: 100%;
+}
+
+.main-container div img{
+    padding-top: 81px;
+} */
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
