@@ -79,8 +79,9 @@
 	block-size: auto;
 }
 /* フォントサイズの設定 */
-:where(p, h1, h2, h3, h4, h5, h6) {
+:where(p, h1, h2, h3, h4, h5, h6, a) {
 	overflow-wrap: break-word;
+	color: #000;
 }
 
 :where(h1) {
