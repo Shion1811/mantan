@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注文開始画面</title>
+    <link rel="stylesheet" href="../style/24reset.css">
+    <link rel="stylesheet" href="../style/base.css">
+    <link rel="stylesheet" href="../style/pages/order-page.css">
+</head>
+<body>
+    <main>
+        <section class="sec-container">
+            <div class="bg-water">
+                <div class="bg-container">
+                    <div class="water-price">
+                        水<span>0円</span>
+                    </div>
+                    <div class="counter">
+                        <button class="counter-minus" id="minus-button"><span></span></button>
+                        <h2 class="counter-number" id="count-number">0</h2>
+                        <button class="counter-plus" id="plus-button"><span></span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-juce">
+                <div class="bg-container">
+                    <div class="juce-price">
+                        ドリンクバー<span>0円</span>
+                    </div>
+                    <div class="counter">
+                        <button class="counter-minus" id="minus-button"><span></span></button>
+                        <h2 class="counter-number" id="count-number">0</h2>
+                        <button class="counter-plus" id="plus-button"><span></span></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="menu-container">
+                <a href="/index.html">    <!--仮でindex.htmlに飛ぶようにしている -->
+                    <button class="back-menu-container">
+                        <h3>戻る</h3>
+                    </button>
+                </a>
+                <div class="toral">
+                    <p class="toral-people">合計人数 <span>0</span> 人</p>
+                </div>
+                <a href="/index.html">    <!--仮でindex.htmlに飛ぶようにしている -->
+                    <button class="next-menu-container">
+                        <h3>次へ</h3>
+                    </button>
+                </a>
+            </div>
+        </section>
+    </main>
+    <script src="../js/order-page.js"></script>
+</body>
+</html>

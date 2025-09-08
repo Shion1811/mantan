@@ -1,7 +1,7 @@
-.next-menu-button{
+.back-menu-container{
     width: 170px;
     height: 110px;
-    background-color: var(--color-orange);
+    background-color: var(--color-blue);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,6 +10,6 @@
     box-shadow: var(--drop-shadow);
     text-align: center;
 }
-.next-menu-button h3{
+.back-menu-container h3{
     color: var(--color-black);
 }
