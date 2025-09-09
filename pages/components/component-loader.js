@@ -17,7 +17,6 @@
     
     function log(message) {
         if (DEBUG) {
-            console.log('[ComponentLoader]', message);
         }
     }
     

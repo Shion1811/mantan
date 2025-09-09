@@ -61,7 +61,6 @@ function selectProduct() {
 
 function formatOrderHistoryText() {
     const orderHistoryParagraphs = document.querySelectorAll('.order-history p');
-    console.log('Found paragraphs:', orderHistoryParagraphs.length);
     
     orderHistoryParagraphs.forEach((p, index) => {
         // span要素を一時的に保存
@@ -70,7 +69,6 @@ function formatOrderHistoryText() {
         
         // spanを除いたテキストのみを取得
         const textContent = p.textContent.replace(/\d+コ/g, '').trim();
-        console.log(`Paragraph ${index}: "${textContent}"`);
         
         if (textContent && textContent.length > 0) {
             // 日本語の文字数で改行（6文字ごと）
@@ -82,7 +80,6 @@ function formatOrderHistoryText() {
                 
                 // 改行されたテキストとspanを組み合わせ
                 p.innerHTML = lines.join('<br>') + ' ' + spanHTML;
-                console.log(`Formatted paragraph ${index}:`, p.innerHTML);
             }
         }
     });
@@ -94,20 +91,15 @@ function updateOrderHistoryCounts() {
     const waterCount = localStorage.getItem('waterCount') || '0';
     const drinkCount = localStorage.getItem('drinkCount') || '0';
     
-    console.log(`注文履歴を読み込み: 水=${waterCount}コ, ドリンクバー=${drinkCount}コ`);
-    
     // 全ての注文履歴要素を確認
     const allOrderCounts = document.querySelectorAll('.order-history-count');
-    console.log(`見つかった注文履歴要素数: ${allOrderCounts.length}`);
     allOrderCounts.forEach((element, index) => {
-        console.log(`要素${index}: ${element.textContent}`);
     });
     
     // 水の注文数を更新（最初のdiv内のp要素）
     const waterCountElement = document.querySelector('.order-history-list > div:first-child .order-history-count');
     if (waterCountElement) {
         waterCountElement.textContent = `${waterCount}コ`;
-        console.log(`水の注文数を更新: ${waterCount}コ`);
     } else {
         console.log('水の注文数要素が見つかりません');
         // 代替方法で検索
@@ -125,7 +117,6 @@ function updateOrderHistoryCounts() {
     const drinkCountElement = document.querySelector('.order-history-list > div:nth-child(2) .order-history-count');
     if (drinkCountElement) {
         drinkCountElement.textContent = `${drinkCount}コ`;
-        console.log(`ドリンクバーの注文数を更新: ${drinkCount}コ`);
     } else {
         console.log('ドリンクバーの注文数要素が見つかりません');
         // 代替方法で検索
@@ -248,4 +239,53 @@ document.addEventListener('visibilitychange', () => {
 // ページがフォーカスされた時にも注文履歴を更新
 window.addEventListener('focus', () => {
     updateOrderHistoryCounts();
+});
+
+// ===== ProductList関連の機能 =====
+
+// 時間に応じて遷移先を決定する関数
+function getTimeBasedRedirect() {
+    const now = new Date();
+    const currentHour = now.getHours();
+    
+    console.log(`現在の時刻: ${currentHour}時`);
+    
+    // 11:00~16:00の場合はconfirmationScreen.html
+    if (currentHour >= 11 && currentHour < 16) {
+        console.log('11:00~16:00の時間帯 - confirmationScreen.htmlに遷移');
+        return '../pages/confirmationScreen.html';
+    }
+    // 16:00~18:00の場合はmodal
+    else if (currentHour >= 16 && currentHour < 20) {
+        console.log('16:00~18:00の時間帯 - modalに遷移');
+        return '../pages/modal/side/index.html';
+    }
+    // その他の時間帯はconfirmationScreen.html（デフォルト）
+    else {
+        console.log('その他の時間帯 - confirmationScreen.htmlに遷移（デフォルト）');
+        return '../pages/confirmationScreen.html';
+    }
+}
+
+// ProductListのクリックイベントを設定
+function setupProductListClickEvents() {
+    // コンポーネント読み込み完了後に実行
+    setTimeout(() => {
+        const productContainers = document.querySelectorAll('.product-list-container');
+        
+        productContainers.forEach((container, index) => {
+            
+            container.addEventListener('click', () => {
+                console.log(`ProductList ${index + 1} がクリックされました`);
+                const targetUrl = getTimeBasedRedirect();
+                console.log(`遷移先: ${targetUrl}`);
+                window.location.href = targetUrl;
+            });
+        });
+    }, 1000); // コンポーネント読み込みを待つ
+}
+
+// ProductListの機能を初期化
+document.addEventListener('DOMContentLoaded', () => {
+    setupProductListClickEvents();
 });
