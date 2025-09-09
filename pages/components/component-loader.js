@@ -124,17 +124,17 @@
                 return;
             }
             
-            // data-href属性がある場合はNextButtonのhrefを変更
+            // data-href属性がある場合はNextButtonまたはBackのhrefを変更
             const dataHref = slot.getAttribute('data-href');
-            if (dataHref && htmlUrl.includes('NextButton')) {
-                log(`NextButtonのhrefを変更: ${dataHref}`);
+            if (dataHref && (htmlUrl.includes('NextButton') || htmlUrl.includes('Back'))) {
+                log(`${htmlUrl.includes('NextButton') ? 'NextButton' : 'Back'}のhrefを変更: ${dataHref}`);
                 htmlContent = htmlContent.replace('href="/index.html"', `href="${dataHref}"`);
             }
             
-            // data-target属性がある場合もNextButtonのhrefを変更（別の属性名対応）
+            // data-target属性がある場合もNextButtonまたはBackのhrefを変更（別の属性名対応）
             const dataTarget = slot.getAttribute('data-target');
-            if (dataTarget && htmlUrl.includes('NextButton')) {
-                log(`NextButtonのhrefを変更（data-target）: ${dataTarget}`);
+            if (dataTarget && (htmlUrl.includes('NextButton') || htmlUrl.includes('Back'))) {
+                log(`${htmlUrl.includes('NextButton') ? 'NextButton' : 'Back'}のhrefを変更（data-target）: ${dataTarget}`);
                 htmlContent = htmlContent.replace('href="/index.html"', `href="${dataTarget}"`);
             }
             
@@ -171,10 +171,8 @@
      * 全てのコンポーネントを読み込む
      */
     function loadAllComponents() {
-        log('コンポーネント読み込み開始');
         
         const slots = document.querySelectorAll('[data-include]');
-        log(`読み込み対象: ${slots.length}件`);
         
         if (slots.length === 0) {
             log('読み込み対象のコンポーネントが見つかりません');
