@@ -1,102 +1,104 @@
-// 商品確認画面のスクリプト
-
-// スクロール同期機能
-function syncScroll() {
-    const container = document.querySelector('.product-check-container');
-    const sideBar = document.querySelector('.side-bar');
-    const innerSideBar = document.querySelector('.inner-side-bar');
+// 商品確認画面の初期化
+function initializeProductCheck() {
+    console.log('productCheck初期化開始');
     
-    if (!container || !sideBar || !innerSideBar) return;
+    // localStorageから注文数を取得
+    const waterCount = localStorage.getItem('waterCount') || '0';
+    const drinkCount = localStorage.getItem('drinkCount') || '0';
     
-    // コンテナのスクロールイベントを監視
-    container.addEventListener('scroll', function() {
-        const scrollTop = container.scrollTop;
-        const scrollHeight = container.scrollHeight;
-        const clientHeight = container.clientHeight;
-        
-        // スクロール可能な範囲を計算
-        const maxScroll = scrollHeight - clientHeight;
-        
-        if (maxScroll > 0) {
-            // スクロール位置の割合を計算（0〜1）
-            const scrollRatio = scrollTop / maxScroll;
-            
-            // side-barとinner-side-barの高さを取得
-            const sideBarHeight = sideBar.offsetHeight;
-            const innerSideBarHeight = innerSideBar.offsetHeight;
-            
-            // inner-side-barの移動可能な範囲を計算（side-barの境界内）
-            const moveableRange = sideBarHeight - innerSideBarHeight;
-            
-            if (moveableRange > 0) {
-                // inner-side-barの位置を調整（side-barの境界内に制限）
-                const newTop = Math.min(scrollRatio * moveableRange, moveableRange);
-                innerSideBar.style.transform = `translateY(${newTop}px)`;
-            }
-        }
-    });
+    console.log(`注文数を読み込み: 水=${waterCount}コ, ドリンクバー=${drinkCount}コ`);
+    
+    // 水の注文数を表示
+    const waterCountElement = document.getElementById('count-number-water');
+    if (waterCountElement) {
+        waterCountElement.textContent = waterCount;
+        console.log(`水の注文数を表示: ${waterCount}コ`);
+    } else {
+        console.log('水の注文数要素が見つかりません');
+    }
+    
+    // ドリンクバーの注文数を表示
+    const drinkCountElement = document.getElementById('count-number-drink');
+    if (drinkCountElement) {
+        drinkCountElement.textContent = drinkCount;
+        console.log(`ドリンクバーの注文数を表示: ${drinkCount}コ`);
+    } else {
+        console.log('ドリンクバーの注文数要素が見つかりません');
+    }
+    
+    // カウント機能を初期化
+    initializeCountFunctions();
 }
 
-// カウント機能
-function initializeCount() {
-    // 全ての商品のカウントボタンを取得
-    const minusButtons = document.querySelectorAll('.product-check-count-minus');
-    const plusButtons = document.querySelectorAll('.product-check-count-plus');
-    const countNumbers = document.querySelectorAll('.product-check-count-number');
-
-    // 各商品のカウントを管理
-    const counts = new Array(countNumbers.length).fill(1);
-
-    // ボタンの色を更新する関数
-    function updateButtonColors(index) {
-        const count = counts[index];
-        const minusButton = minusButtons[index];
-        const plusButton = plusButtons[index];
-
-        if (count === 1) {
-            // 1の時: minusがgray、plusがwhite
-            minusButton.style.backgroundColor = 'var(--color-gray)';
-            plusButton.style.backgroundColor = 'var(--color-white)';
-        } else if (count >= 2 && count <= 4) {
-            // 2~4の時: 両方ともwhite
-            minusButton.style.backgroundColor = 'var(--color-white)';
-            plusButton.style.backgroundColor = 'var(--color-white)';
-        } else if (count === 5) {
-            // 5の時: 1の色を反対（minusがwhite、plusがgray）
-            minusButton.style.backgroundColor = 'var(--color-white)';
-            plusButton.style.backgroundColor = 'var(--color-gray)';
-        }
+// カウント機能を初期化
+function initializeCountFunctions() {
+    // 水のカウント機能
+    const waterMinusButton = document.getElementById('minus-button-water');
+    const waterPlusButton = document.getElementById('plus-button-water');
+    const waterCountElement = document.getElementById('count-number-water');
+    
+    if (waterMinusButton && waterPlusButton && waterCountElement) {
+        let waterCount = parseInt(waterCountElement.textContent) || 0;
+        
+        waterMinusButton.addEventListener('click', () => {
+            if (waterCount > 0) {
+                waterCount--;
+                waterCountElement.textContent = waterCount;
+                localStorage.setItem('waterCount', waterCount);
+                console.log(`水の注文数を更新: ${waterCount}コ`);
+            }
+        });
+        
+        waterPlusButton.addEventListener('click', () => {
+            waterCount++;
+            waterCountElement.textContent = waterCount;
+            localStorage.setItem('waterCount', waterCount);
+            console.log(`水の注文数を更新: ${waterCount}コ`);
+        });
     }
-
-    // 各商品にイベントリスナーを設定
-    minusButtons.forEach((minusButton, index) => {
-        minusButton.addEventListener('click', function() {
-            if (counts[index] > 1) {
-                counts[index]--;
-                countNumbers[index].textContent = counts[index];
-                updateButtonColors(index);
+    
+    // ドリンクバーのカウント機能
+    const drinkMinusButton = document.getElementById('minus-button-drink');
+    const drinkPlusButton = document.getElementById('plus-button-drink');
+    const drinkCountElement = document.getElementById('count-number-drink');
+    
+    if (drinkMinusButton && drinkPlusButton && drinkCountElement) {
+        let drinkCount = parseInt(drinkCountElement.textContent) || 0;
+        
+        drinkMinusButton.addEventListener('click', () => {
+            if (drinkCount > 0) {
+                drinkCount--;
+                drinkCountElement.textContent = drinkCount;
+                localStorage.setItem('drinkCount', drinkCount);
+                console.log(`ドリンクバーの注文数を更新: ${drinkCount}コ`);
             }
         });
-    });
-
-    plusButtons.forEach((plusButton, index) => {
-        plusButton.addEventListener('click', function() {
-            if (counts[index] < 5) {
-                counts[index]++;
-                countNumbers[index].textContent = counts[index];
-                updateButtonColors(index);
-            }
+        
+        drinkPlusButton.addEventListener('click', () => {
+            drinkCount++;
+            drinkCountElement.textContent = drinkCount;
+            localStorage.setItem('drinkCount', drinkCount);
+            console.log(`ドリンクバーの注文数を更新: ${drinkCount}コ`);
         });
-    });
-
-    // 初期状態のボタン色を設定
-    counts.forEach((_, index) => {
-        updateButtonColors(index);
-    });
+    }
 }
 
 // ページ読み込み完了時に初期化
-document.addEventListener('DOMContentLoaded', function() {
-    syncScroll();
-    initializeCount();
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMContentLoaded - productCheck初期化');
+    initializeProductCheck();
+});
+
+// ページが表示されるたびに注文数を更新
+document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) {
+        console.log('ページが表示されました - 注文数を更新');
+        initializeProductCheck();
+    }
+});
+
+// ページがフォーカスされた時にも注文数を更新
+window.addEventListener('focus', () => {
+    console.log('ページがフォーカスされました - 注文数を更新');
+    initializeProductCheck();
 });

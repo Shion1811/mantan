@@ -53,6 +53,46 @@ async function productClickAction(){
     }
 }
 
+// 画像を動的に変更する関数
+function setProductImage(imagePath) {
+    const productImage = document.getElementById('product-image');
+    if (productImage && imagePath) {
+        productImage.src = imagePath;
+    }
+}
+
+// 商品タイトルを動的に変更する関数
+function setProductTitle(title) {
+    const titleElement = document.querySelector('.product-list-title-container p');
+    if (titleElement && title) {
+        titleElement.textContent = title;
+    }
+}
+
+// 商品価格を動的に変更する関数
+function setProductPrice(price) {
+    const priceElement = document.querySelector('.product-list-info-container h2');
+    if (priceElement && price) {
+        priceElement.textContent = price;
+    }
+}
+
+// アレルギー情報を動的に変更する関数
+function setAllergyInfo(allergies) {
+    const allergyList = document.querySelector('.product-list-allergy-list');
+    if (allergyList && allergies) {
+        allergyList.innerHTML = '';
+        allergies.forEach(allergy => {
+            const li = document.createElement('li');
+            const img = document.createElement('img');
+            img.src = `../../../images/${allergy}.png`;
+            img.alt = `${allergy}の画像`;
+            li.appendChild(img);
+            allergyList.appendChild(li);
+        });
+    }
+}
+
 document.addEventListener('DOMContentLoaded',()=>{
     productClickAction();
 
