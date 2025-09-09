@@ -6,9 +6,13 @@
     <link rel="stylesheet" href="/pages/modal/set/style.css">
 </head>
 <body>
+    <div class="background">
+        <iframe src="../../../pages/SelectProduct.html"></iframe>
+        <div class="overlay" id="overlay"></div>
+    </div>
     <section class="button-container">
-        <div data-include="../../components/BackMenu/index.html"></div>
-        <div data-include="../../components/ColeClerk/index.html"></div>
+        <div class="back-button" data-include="../../components/BackMenu/index.html"></div>
+        <div class="cole-button" data-include="../../components/ColeClerk/index.html"></div>
     </section>
     <div class="all-container">
         <section class="set-container">
@@ -27,14 +31,14 @@
             </span>
         </section>
         <div class="set-button-container">
-            <!-- 仮でBackMenuを使っている -->
-            <div data-include="../../components/BackMenu/index.html"></div>
+            <div data-include="../../components/Back/index.html" data-href="/pages/modal/side/index.html"></div>
             <h3>じゅんぺいチャレンジ早食い</h3>
-            <div data-include="../../components/NextButton/index.html"></div>
+            <!-- 時間があればside.setで追加された商品があればそれも追加できるように -->
+            <div data-include="../../components/NextButton/index.html" data-href="/pages/SelectProduct.html"></div>
         </div>
     </div>
     <script src="../../components/component-loader.js"></script>
-    <script src="/pages/modal/set/script.js"></script>
+    <script src="script.js"></script>
     <script src="/pages/components/ProductList/script.js"></script>
 </body>
 </html>

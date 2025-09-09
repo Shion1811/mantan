@@ -85,8 +85,23 @@ function touchContents(){
         });
     }, 100); // 100ms待機してから実行
 }
-// ページ読み込み完了時に初期化
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", () => {
+    const overlay = document.getElementById('overlay');
+    if (!overlay) return;
+    
+    overlay.addEventListener('click', (e) => {
+      // 子要素をクリックした時に誤作動させたくなければ以下でガード
+      if (e.target !== e.currentTarget) return;
+
+      if (history.length > 1) {
+        history.back();
+      } else {
+        location.href = '/index.html';
+      }
+    });
+  });
+
+document.addEventListener('DOMContentLoaded',()=> {
     syncScroll();
-    touchContents();
+    touchContents
 });
