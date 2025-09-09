@@ -29,12 +29,12 @@
     border-radius: 16px;
 }
 .yes{
-    background-color: var(--color-blue #C8FFFF);
+    background-color: var(--color-blue, #C8FFFF);
     /* base.cssで設定したある色を使う */
 }
 
 .no{
-    background-color: var(--color-orange #FF8438);
+    background-color: var(--color-orange, #FF8438);
     /* base.cssで設定したある色を使う */
 }
 
