@@ -1,3 +1,27 @@
+// 時間に応じて遷移先を決定する関数
+function getTimeBasedRedirect() {
+    const now = new Date();
+    const currentHour = now.getHours();
+    
+    console.log(`現在の時刻: ${currentHour}時`);
+    
+    // 11:00~16:00の場合はconfirmationScreen.html
+    if (currentHour >= 11 && currentHour < 16) {
+        console.log('11:00~16:00の時間帯 - confirmationScreen.htmlに遷移');
+        return '../../../pages/confirmationScreen.html';
+    }
+    // 16:00~18:00の場合はmodal
+    else if (currentHour >= 16 && currentHour < 20) {
+        console.log('16:00~18:00の時間帯 - modalに遷移');
+        return '../../../pages/modal/set/index.html';
+    }
+    // その他の時間帯はconfirmationScreen.html（デフォルト）
+    else {
+        console.log('その他の時間帯 - confirmationScreen.htmlに遷移（デフォルト）');
+        return '../../../pages/confirmationScreen.html';
+    }
+}
+
 async function productClickAction(){
     const productContainer = document.getElementById('product-list-container');
     const side = await fetch('../../../pages/modal/side/index.html');
@@ -48,7 +72,9 @@ async function productClickAction(){
         });
     } else {
         productContainer.addEventListener('click',()=>{
-            window.location.href = "../../../index.html";
+            // 時間に応じて遷移先を決定
+            const targetUrl = getTimeBasedRedirect();
+            window.location.href = targetUrl;
         });
     }
 }
@@ -94,7 +120,10 @@ function setAllergyInfo(allergies) {
 }
 
 document.addEventListener('DOMContentLoaded',()=>{
-    productClickAction();
-
+    // 現在の時刻を表示（デバッグ用）
+    const now = new Date();
+    const currentTime = now.toLocaleTimeString('ja-JP');
+    console.log(`ProductList読み込み完了 - 現在時刻: ${currentTime}`);
+    
     productClickAction();
 });
