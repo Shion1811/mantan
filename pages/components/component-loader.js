@@ -124,6 +124,20 @@
                 return;
             }
             
+            // data-href属性がある場合はNextButtonのhrefを変更
+            const dataHref = slot.getAttribute('data-href');
+            if (dataHref && htmlUrl.includes('NextButton')) {
+                log(`NextButtonのhrefを変更: ${dataHref}`);
+                htmlContent = htmlContent.replace('href="/index.html"', `href="${dataHref}"`);
+            }
+            
+            // data-target属性がある場合もNextButtonのhrefを変更（別の属性名対応）
+            const dataTarget = slot.getAttribute('data-target');
+            if (dataTarget && htmlUrl.includes('NextButton')) {
+                log(`NextButtonのhrefを変更（data-target）: ${dataTarget}`);
+                htmlContent = htmlContent.replace('href="/index.html"', `href="${dataTarget}"`);
+            }
+            
             // HTMLを挿入
             slot.innerHTML = htmlContent;
             log(`HTML挿入完了: ${htmlContent.length}文字`);
