@@ -1,0 +1,66 @@
+{
+  "おすすめ": [
+    { "image": "../../../images/IMG_8903.jpg", "title": "ポテトフライ", "price": "1,000円", "allergies": ["buckwheat", "Crab", "egg", "milk"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "ハンバーガー", "price": "800円", "allergies": ["wheat", "egg"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "サラダ", "price": "600円", "allergies": [] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "スープ", "price": "400円", "allergies": ["milk"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "パスタ", "price": "1,200円", "allergies": ["wheat", "egg"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "ピザ", "price": "1,500円", "allergies": ["wheat", "milk"] }
+  ],
+  "洋食": [
+    { "image": "../../../images/IMG_8903.jpg", "title": "ステーキ", "price": "2,500円", "allergies": ["egg"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "ハンバーグ", "price": "1,200円", "allergies": ["egg", "wheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "オムライス", "price": "1,000円", "allergies": ["egg", "wheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "グラタン", "price": "1,300円", "allergies": ["milk", "wheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "ドリア", "price": "1,100円", "allergies": ["milk", "wheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "シチュー", "price": "900円", "allergies": ["milk", "wheat"] }
+  ],
+  "和食": [
+    { "image": "../../../images/IMG_8903.jpg", "title": "寿司", "price": "2,000円", "allergies": ["Shrimp"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "天ぷら", "price": "1,500円", "allergies": ["wheat", "egg", "Shrimp"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "うどん", "price": "800円", "allergies": ["wheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "そば", "price": "700円", "allergies": ["buckwheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "ラーメン", "price": "900円", "allergies": ["wheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "丼物", "price": "1,000円", "allergies": ["egg"] }
+  ],
+  "定食": [
+    { "image": "../../../images/IMG_8903.jpg", "title": "唐揚げ定食", "price": "1,200円", "allergies": ["wheat", "egg"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "魚定食", "price": "1,100円", "allergies": ["milk", "wheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "肉定食", "price": "1,300円", "allergies": ["egg", "wheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "野菜定食", "price": "900円", "allergies": [] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "カレー定食", "price": "1,000円", "allergies": ["wheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "親子丼定食", "price": "1,100円", "allergies": ["egg", "wheat"] }
+  ],
+  "キッズ": [
+    { "image": "../../../images/IMG_8903.jpg", "title": "キッズハンバーグ", "price": "600円", "allergies": ["beef", "wheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "キッズオムライス", "price": "500円", "allergies": ["egg", "wheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "キッズパスタ", "price": "550円", "allergies": ["wheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "キッズピザ", "price": "700円", "allergies": ["wheat", "milk"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "キッズサラダ", "price": "400円", "allergies": [] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "キッズスープ", "price": "300円", "allergies": ["milk"] }
+  ],
+  "デザート": [
+    { "image": "../../../images/IMG_8903.jpg", "title": "チーズケーキ", "price": "500円", "allergies": ["milk", "egg", "wheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "アイスクリーム", "price": "400円", "allergies": ["milk", "egg"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "プリン", "price": "450円", "allergies": ["milk", "egg"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "パフェ", "price": "600円", "allergies": ["milk", "egg"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "フルーツ", "price": "350円", "allergies": ["Crab", "egg", "wheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "ゼリー", "price": "300円"}
+  ],
+  "ドリンク": [
+    { "image": "../../../images/water.png", "title": "水", "price": "0円", "allergies": [] },
+    { "image": "../../../images/juce.png", "title": "ドリンクバー", "price": "0円", "allergies": [] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "コーヒー", "price": "300円", "allergies": [] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "紅茶", "price": "300円", "allergies": [] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "ジュース", "price": "250円", "allergies": [] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "ソフトドリンク", "price": "200円", "allergies": [] }
+  ],
+  "その他": [
+    { "image": "../../../images/IMG_8903.jpg", "title": "サンドイッチ", "price": "800円", "allergies": ["wheat", "egg"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "サラダ", "price": "600円", "allergies": [] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "スープ", "price": "400円", "allergies": ["milk"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "パン", "price": "200円", "allergies": ["wheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "おにぎり", "price": "300円", "allergies": [] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "お弁当", "price": "1,000円", "allergies": ["wheat", "egg"] }
+  ]
+}

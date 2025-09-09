@@ -15,6 +15,23 @@ function initializeCount() {
         if (totalPeopleElement) {
             totalPeopleElement.textContent = total;
         }
+        
+        // 注文履歴を更新
+        updateOrderHistory();
+    }
+    
+    // 注文履歴を更新する関数
+    function updateOrderHistory() {
+        // 水の注文数（最初のカウント）
+        const waterCount = counts[0] || 0;
+        // ドリンクバーの注文数（2番目のカウント）
+        const drinkCount = counts[1] || 0;
+        
+        // localStorageに保存
+        localStorage.setItem('waterCount', waterCount);
+        localStorage.setItem('drinkCount', drinkCount);
+        
+        console.log(`注文履歴を更新: 水=${waterCount}コ, ドリンクバー=${drinkCount}コ`);
     }
 
     // ボタンの色を更新する関数
