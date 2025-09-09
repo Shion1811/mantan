@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/24reset.css">
+    <link rel="stylesheet" href="../style/base.css">
+    <link rel="stylesheet" href="../style/pages/ProductConfirmationScreen.css">
+    <title>ProducteEmpty</title>
+</head>
+<body>
+    <section class="menu-container">
+        <div data-include="components/BackMenu/index.html"></div>
+        <div data-include="components/ColeClerk/index.html"></div>
+    </section>
+    <section class="menu-button-container">
+        <h2>本当に注文を空にしますか?</h2>
+        <div>
+            <button class="button-yes" id="button-yes"><h3>はい</h3></button>
+            <button class="button-no" id="button-no"><h3>いいえ</h3></button>
+        </div>
+    </section>
+    <section class="order-container">
+        <div data-include="components/OrderEmpty/index.html"></div>
+        <div class="order-total-container">
+            <h2>合計金額</h2>
+            <h2 class="order-total-price">XXX円</h2>
+        </div>
+        <div data-include="components/OrderConfirmed/index.html"></div>
+    </section>
+    <script src="components/component-loader.js"></script>
+    <script src="../js/ProductConfirmationScreen.js"></script>
+</body>
+</html>
