@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="/pages/modal/side/style.css">
 </head>
 <body>
+    <div class="background">
+        <iframe src="../../../pages/SelectProduct.html"></iframe>
+        <div class="overlay" id="overlay"></div>
+    </div>
     <section>
         <div data-include="../../components/ColeClerk/index.html"></div>
     </section>
@@ -29,10 +33,11 @@
             <!-- 仮でBackMenuを使っている -->
             <div data-include="../../components/BackMenu/index.html"></div>
             <h3>じゅんぺいチャレンジ早食い</h3>
-            <div data-include="../../components/NextButton/index.html"></div>
+            <div data-include="../../components/NextButton/index.html" data-href="/pages/modal/set/index.html"></div>
         </div>
     </div>
     <script src="../../components/component-loader.js"></script>
-    <script src="/pages/modal/side/script.js"></script>
+    <script src="script.js"></script>
+    <script src="/pages/components/ProductList/script.js"></script>
 </body>
 </html>
