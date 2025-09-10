@@ -31,6 +31,16 @@ body{
     margin: 0 10px;
     font-size: var(--font-p);
 }
+
+/* アクティブ状態のスタイル */
+.category-list li.active{
+    background-color: var(--color-orange);
+}
+
+/* おすすめボタンのデフォルトアクティブ状態 */
+.category-list li:first-child{
+    background-color: var(--color-orange);
+}
 .select-product-container{
     display: flex;
     justify-content: space-between;
@@ -55,7 +65,7 @@ body{
     column-gap: 40px;
     row-gap: 20px;
     width: 987px;
-    min-width: 990px;
+    min-width: 1020px;
     height: 90%;
     flex-shrink: 0;
     scroll-snap-align: start;

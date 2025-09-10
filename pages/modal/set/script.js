@@ -36,6 +36,23 @@ function syncScroll() {
         }
     });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const overlay = document.getElementById('overlay');
+    if (!overlay) return;
+    
+    overlay.addEventListener('click', (e) => {
+      // 子要素をクリックした時に誤作動させたくなければ以下でガード
+      if (e.target !== e.currentTarget) return;
+
+      if (history.length > 1) {
+        history.go(-2);
+      } else {
+        location.href = '/index.html';
+      }
+    });
+  });
+
 document.addEventListener('DOMContentLoaded', function() {
     syncScroll();
 });

@@ -1,3 +1,6 @@
+body{
+    position: relative;
+}
 .set-bar{
     width: 801px;
     height: 30px;
@@ -54,6 +57,10 @@
     margin: 0 auto;
     background-color: var(--color-white);
     border-radius: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 4/1280px;
 }
 .set-button-container{
     display: flex;
@@ -67,8 +74,37 @@
     width: 320px;
     text-align: center;
 }
-.button-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+
+
+.back-button{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cole-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.background iframe {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: -1;
+    opacity: 0.1;
+}
+.overlay {
+    position: fixed;
+    inset: 0; 
+    background: transparent;
+    z-index: 5; 
+    cursor: pointer;
+}
+  
+  .all-container, .button-container {
+    position: relative;
+    z-index: 10;
 }
