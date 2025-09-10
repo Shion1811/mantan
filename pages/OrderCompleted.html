@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.css"> -->
-    <link rel="stylesheet" href="../style/24reset.css">
-    <link rel="stylesheet" href="../style/base.css">
-    <link rel="stylesheet" href="../style/pages/OrderCompleted.css">
-    <title>Document</title>
-</head>
-<body>
-    <div class="main-container">
-        <h1>注文を完了しました</h1>
-        <a href="">#画面をタッチするとメニュー画面に戻ります</a>
-        <div>
-            <img src="../images/ clerk.png" alt="">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style/24reset.css">
+        <link rel="stylesheet" href="/style/base.css">
+        <link rel="stylesheet" href="/style/pages/OrderCompleted.css">
+        <title>注文が完了しました</title>
+    </head>
+    <body onclick="window.location.href='/pages/components/SelectProduct/index.html'">
+        <div class="order-completed-container">
+            <h1>注文が完了しました</h1>
+            <p>#画面をタッチするとメニュー画面に戻ります</p>
+            <img src="/images/clerk.png" alt="店員イラスト">
         </div>
-    </div>
-</body>
+    </body>
+    <script src="/js/OrderCompleted.js"></script>
 </html>

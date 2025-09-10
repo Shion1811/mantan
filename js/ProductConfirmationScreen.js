@@ -4,7 +4,7 @@ function buttonYesAction(){
 
     yesButton.addEventListener('click',()=>{
         // 仮でindex.htmlに飛ぶようにしている
-        window.location.href = 'index.html';
+        window.location.href = '/pages/components/SelectProduct/index.html';
     });
     noButton.addEventListener('click',()=>{
         window.location.href = 'productCheck.html';
