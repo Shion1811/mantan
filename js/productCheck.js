@@ -102,3 +102,59 @@ window.addEventListener('focus', () => {
     console.log('ページがフォーカスされました - 注文数を更新');
     initializeProductCheck();
 });
+
+document.addEventListener('DOMContentLoaded',()=>{
+    // すべての削除ボタンにイベントリスナーを追加
+    const deleteButtons = document.querySelectorAll('[id^="delete-button"]');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click',(e)=>{
+            // クリックされたボタンの親要素（商品コンテナ）を取得
+            const productContainer = button.closest('.product-check-image-container');
+            if(productContainer){
+                productContainer.remove();
+            }
+        });
+    });
+});
+
+
+// 縦スクロール同期機能
+function syncScroll() {
+    const container = document.querySelector('.side-product-list');
+    const sideBar = document.querySelector('.side-bar');
+    const innerSideBar = document.querySelector('.inner-side-bar');
+    
+    if (!container || !sideBar || !innerSideBar) return;
+    
+    // コンテナの縦スクロールイベントを監視
+    container.addEventListener('scroll', function() {
+        const scrollTop = container.scrollTop;
+        const scrollHeight = container.scrollHeight;
+        const clientHeight = container.clientHeight;
+        
+        // 縦スクロール可能な範囲を計算
+        const maxScroll = scrollHeight - clientHeight;
+        
+        if (maxScroll > 0) {
+            // スクロール位置の割合を計算（0〜1）
+            const scrollRatio = scrollTop / maxScroll;
+            
+            // side-barとinner-side-barの高さを取得
+            const sideBarHeight = sideBar.offsetHeight;
+            const innerSideBarHeight = innerSideBar.offsetHeight;
+            
+            // inner-side-barの移動可能な範囲を計算（side-barの境界内）
+            const moveableRange = sideBarHeight - innerSideBarHeight;
+            
+            if (moveableRange > 0) {
+                // inner-side-barの位置を調整（side-barの境界内に制限）
+                const newTop = Math.min(scrollRatio * moveableRange, moveableRange);
+                innerSideBar.style.transform = `translateY(${newTop}px)`;
+            }
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+    syncScroll();
+});
