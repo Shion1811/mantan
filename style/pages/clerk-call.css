@@ -1,40 +1,31 @@
-@charset "utf-8";
-
-.section{
-    width: 704px;
-    height: 284px;
-    /* 位置*/
-    position: relative;
-    top: 258px;
-    left: 288px;
-}
-
-.div-box{
-    width: 680px;
-    height: 130px;
-    display: flex;
-    justify-content: space-between;
-    opacity: 1;
-}
-
-/*yes no*/
-
-.div-box > div{
+.clerk-call-container{
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 180px;
-    height: 130px;
-    border-radius: 16px;
 }
-.yes{
-    background-color: var(--color-blue, #C8FFFF);
-    /* base.cssで設定したある色を使う */
+.call-button-container{
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+    height: 260px;
+    align-items: center;
+    & button{
+        width: 170px;
+        height: 130px;
+        border-radius: 20px;
+        box-shadow: var(--drop-shadow); 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    & .call-yes{
+        background-color: var(--color-blue);
+    }
+    & .call-no{
+        background-color: var(--color-orange);
+    }
 }
-
-.no{
-    background-color: var(--color-orange, #FF8438);
-    /* base.cssで設定したある色を使う */
-}
-

@@ -9,18 +9,16 @@
     <title>店員呼び出し</title> <!-- タイトルは適切な方を選択 -->
 </head>
 <body>
-    <main>
-        <section class="section">
-            <h1>店員を呼び出しますか？</h1>
-            <div class="div-box">
-                <div class="yes">
-                    <h2>はい</h2>
-                </div>
-                <div class="no">
-                    <h2>いいえ</h2>
-                </div>
-            </div>
-        </section>
-    </main>
+    <section class="clerk-call-container">
+        <h1>店員を呼び出しますか？</h1>
+        <div class="call-button-container">
+            <button class="call-yes" onclick="window.location.href='/pages/loadingCall.html'">
+                <h2>はい</h2>
+            </button>
+            <button class="call-no" onclick="window.location.href='/pages/components/SelectProduct/index.html'">
+                <h2>いいえ</h2>
+            </button>
+        </div>
+    </section>
 </body>
 </html>
