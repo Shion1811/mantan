@@ -1,0 +1,17 @@
+.loading-call-container {
+    width: 410px;
+    height: 490px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+body{
+    width: var(--width-container);
+    height: var(--height-container);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
