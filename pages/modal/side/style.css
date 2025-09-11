@@ -88,7 +88,7 @@
     cursor: pointer;
 }
   
-  .all-container, .button-container {
+  .all-container, .side-button-container, section {
     position: relative;
     z-index: 10;
 }
