@@ -35,6 +35,60 @@ function syncScroll() {
             }
         }
     });
+    
+    // ドラッグ状態の管理
+    let isDragging = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    
+    // サイドバークリックでスクロール位置を変更
+    setBar.addEventListener('click', function(e) {
+        if (isDragging) return; // ドラッグ中はクリック処理をスキップ
+        
+        const rect = setBar.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const clickPercent = clickX / rect.width;
+        
+        const scrollWidth = container.scrollWidth;
+        const clientWidth = container.clientWidth;
+        const maxScroll = scrollWidth - clientWidth;
+        
+        const targetScrollLeft = clickPercent * maxScroll;
+        container.scrollLeft = targetScrollLeft;
+    });
+    
+    // マウスダウンでドラッグ開始
+    setBar.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        startX = e.clientX;
+        startScrollLeft = container.scrollLeft;
+        setBar.style.cursor = 'grabbing';
+        e.preventDefault();
+    });
+    
+    // マウス移動でドラッグ処理
+    document.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+        
+        const deltaX = e.clientX - startX;
+        const rect = setBar.getBoundingClientRect();
+        const deltaPercent = deltaX / rect.width;
+        
+        const scrollWidth = container.scrollWidth;
+        const clientWidth = container.clientWidth;
+        const maxScroll = scrollWidth - clientWidth;
+        
+        const targetScrollLeft = startScrollLeft + (deltaPercent * maxScroll);
+        container.scrollLeft = Math.max(0, Math.min(targetScrollLeft, maxScroll));
+    });
+    
+    // マウスアップでドラッグ終了
+    document.addEventListener('mouseup', function() {
+        if (isDragging) {
+            isDragging = false;
+            setBar.style.cursor = 'grab';
+        }
+    });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
