@@ -66,9 +66,6 @@ img, button, input, textarea, select {
     body {
         /* コンテンツ幅の設定 */
         padding: 10px 45px;
-        /* borderはデバッグ用で本番は消す */
-        border: 1px solid #333333;
-        border-radius: 20px;
         overflow: hidden;
 	    height: 800px;
     }

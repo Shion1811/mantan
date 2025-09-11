@@ -64,7 +64,7 @@
     { "image": "../../../images/IMG_8903.jpg", "title": "プリン", "price": "450円", "allergies": ["milk", "egg"] },
     { "image": "../../../images/IMG_8903.jpg", "title": "パフェ", "price": "600円", "allergies": ["milk", "egg"] },
     { "image": "../../../images/IMG_8903.jpg", "title": "フルーツ", "price": "350円", "allergies": ["Crab", "egg", "wheat"] },
-    { "image": "../../../images/IMG_8903.jpg", "title": "ゼリー", "price": "300円"}
+    { "image": "../../../images/IMG_8903.jpg", "title": "ゼリー", "price": "300円", "allergies": ["abalone"]}
   ],
   "ドリンク": [
     { "image": "/images/water.png", "title": "水", "price": "0円", "allergies": [] },
