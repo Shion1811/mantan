@@ -10,6 +10,25 @@ const CATEGORIES = [
     'その他'
 ];
 
+// 商品データを格納する変数
+let productData = null;
+
+// JSONファイルを読み込む関数
+async function loadProductData() {
+    try {
+        const response = await fetch('../product-data.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        productData = await response.json();
+        console.log('商品データ読み込み成功:', productData);
+        return productData;
+    } catch (error) {
+        console.error('商品データ読み込みエラー:', error);
+        return {};
+    }
+}
+
 // 現在のジャンルのインデックスを取得
 function getCurrentCategoryIndex() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -26,6 +45,98 @@ function getNextCategory() {
     return null; // 最後のジャンルの場合
 }
 
+
+// 商品データを表示する関数
+function displayProducts(category) {
+    if (!productData || !productData[category]) {
+        console.log(`カテゴリー "${category}" のデータが見つかりません`);
+        return;
+    }
+    
+    const products = productData[category];
+    const productListContainers = document.querySelectorAll('.product-list');
+    
+    // 各ページに商品を配置
+    productListContainers.forEach((container, pageIndex) => {
+        const startIndex = pageIndex * 6; // 1ページに6商品
+        const endIndex = Math.min(startIndex + 6, products.length);
+        const pageProducts = products.slice(startIndex, endIndex);
+        
+        // 既存のProductListコンポーネントをクリア
+        container.innerHTML = '';
+        
+        // 商品を追加
+        pageProducts.forEach((product, productIndex) => {
+            const productElement = createProductElement(product, startIndex + productIndex);
+            container.appendChild(productElement);
+        });
+    });
+}
+
+// 商品要素を作成する関数
+function createProductElement(product, index) {
+    const productDiv = document.createElement('div');
+    productDiv.className = 'product-list-container';
+    productDiv.id = `product-list-container-${index}`;
+    productDiv.setAttribute('data-product-index', index);
+    
+    // アレルギー画像のマッピング
+    const allergyImageMap = {
+        'buckwheat': '../images/buckwheat.png',
+        'Crab': '../images/Crab.png',
+        'egg': '../images/egg.png',
+        'milk': '../images/milk.png',
+        'peanut': '../images/peanut.png',
+        'Shrimp': '../images/Shrimp.png',
+        'walnut': '../images/walnut.png',
+        'wheat': '../images/wheat.png',
+        // OptionalAllergiesフォルダの画像
+        'almond': '../images/OptionalAllergies/アーモンド.png',
+        'abalone': '../images/OptionalAllergies/あわび.png',
+        'squid': '../images/OptionalAllergies/いか.png',
+        'salmon_roe': '../images/OptionalAllergies/いくら.png',
+        'orange': '../images/OptionalAllergies/オレンジ.png',
+        'cashew': '../images/OptionalAllergies/カシューナッツ.png',
+        'kiwi': '../images/OptionalAllergies/キウイフルーツ.png',
+        'sesame': '../images/OptionalAllergies/ごま.png',
+        'salmon': '../images/OptionalAllergies/さけ.png',
+        'mackerel': '../images/OptionalAllergies/さば.png',
+        'gelatin': '../images/OptionalAllergies/ゼラチン.png',
+        'banana': '../images/OptionalAllergies/バナナ.png',
+        'macadamia': '../images/OptionalAllergies/マカダミアナッツ.png',
+        'peach': '../images/OptionalAllergies/もも.png',
+        'yam': '../images/OptionalAllergies/やまいも.png',
+        'apple': '../images/OptionalAllergies/りんご.png',
+        'soybean': '../images/OptionalAllergies/大豆.png',
+        'beef': '../images/OptionalAllergies/牛肉.png',
+        'pork': '../images/OptionalAllergies/豚肉.png',
+        'chicken': '../images/OptionalAllergies/鶏肉.png'
+    };
+    
+    // アレルギー画像のHTMLを生成
+    const allergyImages = product.allergies
+        .filter(allergy => allergyImageMap[allergy])
+        .map(allergy => `<li><img src="${allergyImageMap[allergy]}" alt="${allergy}の画像"></li>`)
+        .join('');
+    
+    productDiv.innerHTML = `
+        <img src="${product.image}" alt="${product.title}">
+        <div class="product-list-title-container">
+            <p>${product.title}</p>
+        </div>
+        <div class="product-list-info-container">
+            <div class="product-list-allergy-container">
+                <p>アレルギー</p>
+                <ul class="product-list-allergy-list">
+                    ${allergyImages}
+                </ul>
+            </div>
+            <h2>${product.price}</h2>
+        </div>
+    `;
+    
+    return productDiv;
+}
 
 function selectProduct() {
     const categoryButtons = document.querySelectorAll('.category-list li');
@@ -45,6 +156,9 @@ function selectProduct() {
             button.style.backgroundColor = 'color-mix(in srgb, var(--color-gray), #000000 44%)';
         }
     });
+    
+    // 現在のカテゴリーの商品を表示
+    displayProducts(currentCategory);
     
     categoryButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -217,16 +331,31 @@ function initScrollNavigation() {
     updatePageNumber();
 }
 
+// 初期化処理
+async function initializeSelectProduct() {
+    try {
+        // JSONファイルを読み込み
+        await loadProductData();
+        
+        // 商品選択機能を初期化
+        selectProduct();
+        
+        // 注文履歴を更新
+        updateOrderHistoryCounts();
+        
+        // コンポーネントが読み込まれた後にスクロール機能を初期化
+        setTimeout(() => {
+            initScrollNavigation();
+            formatOrderHistoryText();
+        }, 1000);
+        
+    } catch (error) {
+        console.error('初期化エラー:', error);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    selectProduct();
-    // 注文履歴を更新
-    updateOrderHistoryCounts();
-    
-    // コンポーネントが読み込まれた後にスクロール機能を初期化
-    setTimeout(() => {
-        initScrollNavigation();
-        formatOrderHistoryText();
-    }, 1000);
+    initializeSelectProduct();
 });
 
 // ページが表示されるたびに注文履歴を更新
