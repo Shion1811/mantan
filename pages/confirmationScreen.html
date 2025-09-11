@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/24reset.css">
+    <link rel="stylesheet" href="../style/base.css">
+    <link rel="stylesheet" href="../style/pages/confirmationScreen.css">
+    <title>注文確認画面</title>
+</head>
+<body>
+    <div class="confirmation-screen-container">
+        <div class="confirmation-screen-content">
+            <section class="coal-container">
+                <div data-include="components/ColeClerk/index.html"></div>
+            </section>
+            <section class="main-product-container">
+                <img src="../images/IMG_8903.jpg" alt="商品画像">
+                <div class="main-product-info">
+                    <h3>ハンバーグ盛り盛り定食うどんパン</h3>
+                    <div data-include="components/count/index.html"></div>
+                </div>
+            </section>
+            <section class="allergie-list">
+                <ul>
+                    <li><img src="../images/buckwheat.png" alt="そばの画像"><p>そば</p></li>
+                    <li><img src="../images/Crab.png" alt="蟹の画像"><p>蟹</p></li>
+                    <li><img src="../images/egg.png" alt="卵の画像"><p>卵</p></li>
+                    <li><img src="../images/milk.png" alt="牛乳の画像"><p>牛乳</p></li>
+                    <li><img src="../images/peanut.png" alt="落花生の画像"><p>落花生</p></li>
+                    <li><img src="../images/Shrimp.png" alt="海老の画像"><p>海老</p></li>
+                    <li class="allergie-list-item"><img src="../images/walnut.png" alt="胡桃の画像"><p>胡桃</p></li>
+                    <li><img src="../images/wheat.png" alt="小麦の画像"><p>小麦</p></li>
+                    <li><img src="../images/OptionalAllergies/アーモンド.png" alt="アーモンドの画像"><p>アーモンド</p></li>
+                    <li><img src="../images/OptionalAllergies/あわび.png" alt="あわびの画像"><p>あわび</p></li>
+                    <li><img src="../images/OptionalAllergies/キウイフルーツ.png" alt="キウイフルーツの画像"><p>キウイフルーツ</p></li>
+                    <li class="allergie-list-item"><img src="../images/OptionalAllergies/ごま.png" alt="ごまの画像"><p>ごま</p></li>
+                    <li><img src="../images/OptionalAllergies/さけ.png" alt="さけの画像"><p>さけ</p></li>
+                    <li><img src="../images/OptionalAllergies/やまいも.png" alt="やまいもの画像"><p>やまいも</p></li>
+                    <li><img src="../images/OptionalAllergies/りんご.png" alt="りんごの画像"><p>りんご</p></li>
+                    <li class="allergie-list-item"><img src="../images/OptionalAllergies/大豆.png" alt="大豆の画像"><p>大豆</p></li>
+                    <li><img src="../images/OptionalAllergies/牛肉.png" alt="牛肉の画像"><p>牛肉</p></li>
+                    <li><img src="../images/OptionalAllergies/鶏肉.png" alt="鶏肉の画像"><p>鶏肉</p></li>
+                    <li class="allergie-list-item"><img src="../images/OptionalAllergies/豚肉.png" alt="豚肉の画像"><p>豚肉</p></li>
+                    <li class="allergie-list-item"><img src="../images/OptionalAllergies/オレンジ.png" alt="オレンジの画像"><p>オレンジ</p></li>
+                    <li class="allergie-list-item"><img src="../images/OptionalAllergies/カシューナッツ.png" alt="カシューナッツの画像"><p>カシューナッツ</p></li>
+                </ul>
+            </section>
+            <section class="allergie-and-button">
+                <div data-include="components/BackMenu/index.html"></div>
+                <div data-include="components/NextButton/index.html" data-href="/pages/SelectProduct.html"></div>
+            </section>
+        </div>
+    </div>
+    <script src="components/component-loader.js"></script>
+    <script src="components/count/script.js"></script>
+</body>
+</html>

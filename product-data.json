@@ -1,0 +1,85 @@
+{
+  "おすすめ": [
+    { "image": "/images/food/aji_fry_teishoku_from_provided_karaage.png", "title": "アジフライ定食", "price": "1,000円", "allergies": ["buckwheat", "Crab", "egg", "milk"] },
+    { "image": "/images/food/carbonara_289x175.png", "title": "カルボナーラ", "price": "800円", "allergies": ["wheat", "egg"] },
+    { "image": "/images/food/chicken_nanban_teishoku_from_provided_karaage.png", "title": "チキン南蛮定食", "price": "600円", "allergies": [] },
+    { "image": "/images/food/ebi_fry_teishoku_no_background_from_karaage_no_background.png", "title": "エビフライ定食", "price": "400円", "allergies": ["milk"] },
+    { "image": "/images/food/french_fries_on_plate_no_cone.png", "title": "ポテトフライ", "price": "1,200円", "allergies": ["wheat", "egg"] },
+    { "image": "/images/food/french_fries_with_ketchup_and_mustard.png", "title": "ケチマヨさんのジャガイモ", "price": "1,500円", "allergies": ["wheat", "milk"] },
+    { "image": "/images/food/french_fries_with_ketchup.png", "title": "トマトソースじゃがいも揚げ", "price": "3,450円", "allergies": ["almond"] },
+    { "image": "/images/food/hamburg_289x175.png", "title": "人がお肉にぎにぎ", "price": "450円", "allergies": ["almond", "Shrimp"] },
+    { "image": "/images/food/hamburg_289x175.png", "title": "人がお肉にぎにぎ", "price": "450円", "allergies": ["almond", "abalone"] },
+    { "image": "/images/food/hamburg_cheese_289x175.png", "title": "人がお肉にぎにぎチーのせ", "price": "50円", "allergies": ["squid", "abalone"] },
+    { "image": "/images/food/kaisendon_miso_set.png", "title": "海鮮丼おいしそー", "price": "40,550円", "allergies": ["squid", "abalone", "chicken"] },
+    { "image": "/images/food/karaage_teishoku_no_background.webp", "title": "からあげクン定食", "price": "100,000円", "allergies": ["squid", "abalone", "chicken", "apple"] },
+    { "image": "/images/food/aji_fry_teishoku_from_provided_karaage.png", "title": "アジフライ定食", "price": "1,000円", "allergies": ["buckwheat", "Crab", "egg", "milk"] },
+    { "image": "/images/food/carbonara_289x175.png", "title": "カルボナーラ", "price": "800円", "allergies": ["wheat", "egg"] },
+    { "image": "/images/food/chicken_nanban_teishoku_from_provided_karaage.png", "title": "チキン南蛮定食", "price": "600円", "allergies": [] },
+    { "image": "/images/food/ebi_fry_teishoku_no_background_from_karaage_no_background.png", "title": "エビフライ定食", "price": "400円", "allergies": ["milk"] },
+    { "image": "/images/food/french_fries_on_plate_no_cone.png", "title": "ポテトフライ", "price": "1,200円", "allergies": ["wheat", "egg"] },
+    { "image": "/images/food/french_fries_with_ketchup_and_mustard.png", "title": "ケチマヨさんのジャガイモ", "price": "1,500円", "allergies": ["wheat", "milk"] },
+    { "image": "/images/food/french_fries_with_ketchup.png", "title": "トマトソースじゃがいも揚げ", "price": "3,450円", "allergies": ["almond"] },
+    { "image": "/images/food/hamburg_289x175.png", "title": "人がお肉にぎにぎ", "price": "450円", "allergies": ["almond", "Shrimp"] },
+    { "image": "/images/food/hamburg_289x175.png", "title": "人がお肉にぎにぎ", "price": "450円", "allergies": ["almond", "abalone"] },
+    { "image": "/images/food/hamburg_cheese_289x175.png", "title": "人がお肉にぎにぎチーのせ", "price": "50円", "allergies": ["squid", "abalone"] },
+    { "image": "/images/food/kaisendon_miso_set.png", "title": "海鮮丼おいしそー", "price": "40,550円", "allergies": ["squid", "abalone", "chicken"] },
+    { "image": "/images/food/karaage_teishoku_no_background.webp", "title": "からあげクン定食", "price": "100,000円", "allergies": ["squid", "abalone", "chicken", "apple"] }
+    
+  ],
+  "洋食": [
+    { "image": "/images/food/hamburg_289x175.png", "title": "ハンバーグ", "price": "1,200円", "allergies": ["beef", "wheat", "egg"] },
+    { "image": "/images/food/hamburg_cheese_289x175.png", "title": "チーズハンバーグ", "price": "1,400円", "allergies": ["beef", "wheat", "egg", "milk"] },
+    { "image": "/images/food/carbonara_289x175.png", "title": "カルボナーラ", "price": "800円", "allergies": ["wheat", "egg", "milk"] },
+    { "image": "/images/food/peperoncino.png", "title": "ペペロンチーノ", "price": "750円", "allergies": ["wheat"] },
+    { "image": "/images/food/french_fries_on_plate_no_cone.png", "title": "フライドポテト", "price": "600円", "allergies": ["wheat"] },
+    { "image": "/images/food/french_fries_with_ketchup.png", "title": "ケチャップポテト", "price": "650円", "allergies": ["wheat"] }
+  ],
+  "和食": [
+    { "image": "/images/food/kaisendon_miso_set.png", "title": "海鮮丼", "price": "1,800円", "allergies": ["Shrimp", "salmon", "mackerel"] },
+    { "image": "/images/food/aji_fry_teishoku_from_provided_karaage.png", "title": "アジフライ定食", "price": "1,000円", "allergies": ["buckwheat", "Crab", "egg", "milk"] },
+    { "image": "/images/food/chicken_nanban_teishoku_from_provided_karaage.png", "title": "チキン南蛮定食", "price": "600円", "allergies": ["chicken", "wheat", "egg"] },
+    { "image": "/images/food/ebi_fry_teishoku_no_background_from_karaage_no_background.png", "title": "エビフライ定食", "price": "1,200円", "allergies": ["Shrimp", "wheat", "egg"] },
+    { "image": "/images/food/karaage_teishoku_no_background.webp", "title": "唐揚げ定食", "price": "800円", "allergies": ["chicken", "wheat", "egg"] },
+    { "image": "/images/food/shogayaki_teishoku_from_provided_karaage.png", "title": "生姜焼き定食", "price": "900円", "allergies": ["pork", "wheat"] }
+  ],
+  "定食": [
+    { "image": "/images/food/tonkatsu_teishoku_from_provided_karaage.png", "title": "とんかつ定食", "price": "1,200円", "allergies": ["pork", "wheat", "egg"] },
+    { "image": "/images/food/karaage_teishoku_no_background.webp", "title": "唐揚げ定食", "price": "1,000円", "allergies": ["chicken", "wheat", "egg"] },
+    { "image": "/images/food/aji_fry_teishoku_from_provided_karaage.png", "title": "アジフライ定食", "price": "1,100円", "allergies": ["buckwheat", "Crab", "egg", "milk"] },
+    { "image": "/images/food/ebi_fry_teishoku_no_background_from_karaage_no_background.png", "title": "エビフライ定食", "price": "1,300円", "allergies": ["Shrimp", "wheat", "egg"] },
+    { "image": "/images/food/chicken_nanban_teishoku_from_provided_karaage.png", "title": "チキン南蛮定食", "price": "900円", "allergies": ["chicken", "wheat", "egg"] },
+    { "image": "/images/food/shogayaki_teishoku_from_provided_karaage.png", "title": "生姜焼き定食", "price": "1,100円", "allergies": ["pork", "wheat"] }
+  ],
+  "キッズ": [
+    { "image": "/images/food/hamburg_289x175.png", "title": "キッズハンバーグ", "price": "600円", "allergies": ["beef", "wheat", "egg"] },
+    { "image": "/images/food/french_fries_on_plate_no_cone.png", "title": "キッズポテト", "price": "400円", "allergies": ["wheat"] },
+    { "image": "/images/food/carbonara_289x175.png", "title": "キッズパスタ", "price": "550円", "allergies": ["wheat", "milk"] },
+    { "image": "/images/food/karaage_teishoku_no_background.webp", "title": "キッズ唐揚げ", "price": "500円", "allergies": ["chicken", "wheat", "egg"] },
+    { "image": "/images/food/french_fries_with_ketchup.png", "title": "キッズケチャップポテト", "price": "450円", "allergies": ["wheat"] },
+    { "image": "/images/food/peperoncino.png", "title": "キッズパスタ（シンプル）", "price": "500円", "allergies": ["wheat"] }
+  ],
+  "デザート": [
+    { "image": "../../../images/IMG_8903.jpg", "title": "チーズケーキ", "price": "500円", "allergies": ["milk", "egg", "wheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "アイスクリーム", "price": "400円", "allergies": ["milk", "egg"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "プリン", "price": "450円", "allergies": ["milk", "egg"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "パフェ", "price": "600円", "allergies": ["milk", "egg"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "フルーツ", "price": "350円", "allergies": ["Crab", "egg", "wheat"] },
+    { "image": "../../../images/IMG_8903.jpg", "title": "ゼリー", "price": "300円", "allergies": ["abalone"]}
+  ],
+  "ドリンク": [
+    { "image": "/images/water.png", "title": "水", "price": "0円", "allergies": [] },
+    { "image": "/images/juce.png", "title": "ドリンクバー", "price": "0円", "allergies": [] },
+    { "image": "/images/water.png", "title": "コーヒー", "price": "300円", "allergies": [] },
+    { "image": "/images/juce.png", "title": "紅茶", "price": "300円", "allergies": [] },
+    { "image": "/images/juce.png", "title": "ジュース", "price": "250円", "allergies": [] },
+    { "image": "/images/water.png", "title": "ソフトドリンク", "price": "200円", "allergies": [] }
+  ],
+  "その他": [
+    { "image": "/images/food/hamburg_289x175.png", "title": "サンドイッチ", "price": "800円", "allergies": ["wheat", "egg", "beef"] },
+    { "image": "/images/food/french_fries_on_plate_no_cone.png", "title": "サイドポテト", "price": "400円", "allergies": ["wheat"] },
+    { "image": "/images/food/peperoncino.png", "title": "パスタ（シンプル）", "price": "600円", "allergies": ["wheat"] },
+    { "image": "/images/food/carbonara_289x175.png", "title": "パスタ（クリーム）", "price": "700円", "allergies": ["wheat", "milk", "egg"] },
+    { "image": "/images/food/french_fries_with_ketchup_and_mustard.png", "title": "ポテトセット", "price": "500円", "allergies": ["wheat", "milk"] },
+    { "image": "/images/food/karaage_teishoku_no_background.webp", "title": "お弁当", "price": "1,000円", "allergies": ["chicken", "wheat", "egg"] }
+  ]
+}

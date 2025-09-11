@@ -12,7 +12,7 @@
 
 :where(html) {
 	-webkit-text-size-adjust: none;
-	color-scheme: dark light;
+	/* color-scheme: dark light; */
 	tab-size: 2;
 	scrollbar-gutter: stable;
 }
@@ -29,7 +29,9 @@
 
 :where(body) {
 	line-height: 1.5;
-	font-family: system-ui, sans-serif;
+	/* フォントの設定 */
+	font-family: "Noto Sans JP", sans-serif;
+	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -76,14 +78,54 @@
 	max-inline-size: 100%;
 	block-size: auto;
 }
-
-:where(p, h1, h2, h3, h4, h5, h6) {
+/* フォントサイズの設定 */
+:where(p, h1, h2, h3, h4, h5, h6, a) {
 	overflow-wrap: break-word;
+	color: #000;
 }
 
-:where(h1, h2, h3) {
+:where(h1) {
+	font-size: 36px;
 	line-height: calc(1em + 0.5rem);
 	text-wrap: balance;
+}
+h1,h2,h3,p{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif, "Noto Sans JP";
+	font-weight: 400;
+}
+h1{
+	font-size: 36px;
+}
+h2{
+	font-size: 32px;
+}
+h3{
+	font-size: 24px;
+}
+p{
+	font-size: 16px;
+}
+
+:where(h2) {
+	font-size: 32px;
+	line-height: calc(1em + 0.5rem);
+	text-wrap: balance;
+}
+
+:where(h3) {
+	font-size: 24px;
+	line-height: calc(1em + 0.5rem);
+	text-wrap: balance;
+}
+
+:where(p) {
+	font-size: 20px;
+}
+
+:where(p-small) {
+	font-size: 16px;
 }
 
 :where(hr) {
@@ -126,4 +168,15 @@
 	white-space: nowrap !important;
 	border: 0 !important;
 	user-select: none !important;
+}
+:where(a) {
+	text-decoration: none;
+}
+* {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }

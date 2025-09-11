@@ -1,0 +1,125 @@
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="../style/24reset.css">
+    <link rel="stylesheet" href="../style/base.css">
+    <link rel="stylesheet" href="../style/pages/SelectProduct.css">
+</head>
+<body>
+    <section class="select-product-container">
+        <div class="category-container">
+            <ul class="category-list" id="category-list">
+                <li><button>おすすめ</button></li>
+                <li><button>洋食</button></li> 
+                <li><button>和食</button></li>
+                <li><button>定食</button></li>
+                <li><button>キッズ</button></li>
+                <li><button>デザート</button></li>
+                <li><button>ドリンク</button></li>
+                <li><button>その他</button></li>
+            </ul>
+        </div>
+        <div data-include="components/ColeClerk/index.html" class="cole-clerk-container"></div>
+    </section>
+    <section class="order-list-container">
+        <div class="product-list-pages">
+            <div class="product-list-all">
+                <div class="product-list product-list-1" id="product-list-1">
+                    <div data-include="components/ProductList/index.html"></div>
+                    <div data-include="components/ProductList/index.html"></div>
+                    <div data-include="components/ProductList/index.html"></div> 
+                    <div data-include="components/ProductList/index.html"></div>
+                    <div data-include="components/ProductList/index.html"></div>
+                    <div data-include="components/ProductList/index.html"></div>
+                </div>
+                <div class="product-list product-list-2" id="product-list-2">
+                    <div data-include="components/ProductList/index.html"></div>
+                    <div data-include="components/ProductList/index.html"></div>
+                    <div data-include="components/ProductList/index.html"></div> 
+                    <div data-include="components/ProductList/index.html"></div>
+                    <div data-include="components/ProductList/index.html"></div>
+                    <div data-include="components/ProductList/index.html"></div>
+                </div>
+                <div class="product-list product-list-3" id="product-list-3">
+                    <div data-include="components/ProductList/index.html"></div>
+                    <div data-include="components/ProductList/index.html"></div>
+                    <div data-include="components/ProductList/index.html"></div> 
+                    <div data-include="components/ProductList/index.html"></div>
+                    <div data-include="components/ProductList/index.html"></div>
+                    <div data-include="components/ProductList/index.html"></div>
+                </div>
+                <div class="product-list product-list-4" id="product-list-4">
+                    <div data-include="components/ProductList/index.html"></div>
+                    <div data-include="components/ProductList/index.html"></div>
+                    <div data-include="components/ProductList/index.html"></div>
+                    <div data-include="components/ProductList/index.html"></div>
+                    <div data-include="components/ProductList/index.html"></div>
+                    <div data-include="components/ProductList/index.html"></div>
+                </div>
+            </div>
+            <div class="scroll-button-container">
+                <button class="scroll-left-button"><span></span></button>
+                <h3 class="scroll-page-number"><span id="pages-number"></span>/4ページ</h3>
+                <button class="scroll-right-button"><span></span></button>
+            </div>
+        </div>
+    </div>
+        <div class="order-history">
+            <button class="order-history-title" onclick="window.location.href='/pages/orderHistory.html'"><h2>注文履歴</h2></button>
+            <div class="order-history-list">
+                <div>
+                    <p>水<span class="order-history-count">3コ</span></p>
+                    <span class="order-history-line"></span>
+                </div>
+                <div>
+                    <p>ドリンクバー<span class="order-history-count">7コ</span></p>
+                    <span class="order-history-line"></span>
+                </div>
+                <div>
+                    <p>熱盛ラーメンハンバーグうどん<span class="order-history-count">20コ</span></p>
+                    <span class="order-history-line"></span>
+                </div>
+                <div>
+                    <p></p>
+                    <span class="order-history-line"></span>
+                </div>
+                <div>
+                    <p></p>
+                    <span class="order-history-line"></span>
+                </div>
+                <div>
+                    <p></p>
+                    <span class="order-history-line"></span>
+                </div>
+                <div>  
+                    <p></p>
+                    <span class="order-history-line"></span>
+                </div>
+                <div>
+                    <p></p>
+                    <span class="order-history-line"></span>
+                </div>
+                <div>
+                    <p></p>
+                    <span class="order-history-line"></span>
+                </div>
+                <div>  
+                    <p></p>
+                    <span class="order-history-line"></span>
+                </div>
+                <div>
+                    <p></p>
+                    <span class="order-history-line"></span>
+                </div>
+                <div>
+                    <p></p>
+                    <span class="order-history-line"></span>
+                </div>
+            </div>
+            <button class="order-history-button" onclick="window.location.href='/pages/productCheck.html'"><h3>注文カゴへ</h3></button>
+        </div>
+        </div>
+    </section>
+    <script src="components/component-loader.js"></script>
+    <script src="../js/SelectProduct.js"></script>
+</body>
+</html>

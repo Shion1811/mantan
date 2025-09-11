@@ -1,0 +1,15 @@
+.back-container{
+    width: 170px;
+    height: 110px;
+    background-color: var(--color-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: var(--drop-shadow);
+    text-align: center;
+}
+.back-container h3{
+    color: var(--color-black);
+}
