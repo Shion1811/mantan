@@ -8,7 +8,7 @@
     <section class="select-product-container">
         <div class="category-container">
             <ul class="category-list" id="category-list">
-                <li><button id="category-button">おすすめ</button></li>
+                <li><button>おすすめ</button></li>
                 <li><button>洋食</button></li> 
                 <li><button>和食</button></li>
                 <li><button>定食</button></li>
@@ -16,9 +16,6 @@
                 <li><button>デザート</button></li>
                 <li><button>ドリンク</button></li>
                 <li><button>その他</button></li>
-                <!-- ここは仮でおすすめを入れている -->
-                <li><button>おすすめ</button></li>
-                <li><button>おすすめ</button></li>
             </ul>
         </div>
         <div data-include="components/ColeClerk/index.html" class="cole-clerk-container"></div>
@@ -67,7 +64,7 @@
         </div>
     </div>
         <div class="order-history">
-            <button class="order-history-title"><h2>注文履歴</h2></button>
+            <button class="order-history-title" onclick="window.location.href='/pages/orderHistory.html'"><h2>注文履歴</h2></button>
             <div class="order-history-list">
                 <div>
                     <p>水<span class="order-history-count">3コ</span></p>

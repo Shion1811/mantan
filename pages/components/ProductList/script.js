@@ -1,3 +1,53 @@
+// 商品データを格納する変数
+let productData = null;
+
+// JSONファイルを読み込む関数
+async function loadProductData() {
+    try {
+        const response = await fetch('../../../product-data.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        productData = await response.json();
+        console.log('商品データ読み込み成功:', productData);
+        return productData;
+    } catch (error) {
+        console.error('商品データ読み込みエラー:', error);
+        return {};
+    }
+}
+
+// 現在のカテゴリーを取得する関数
+function getCurrentCategory() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('category') || 'おすすめ';
+}
+
+// 商品データを表示する関数
+function displayProductData() {
+    if (!productData) {
+        console.log('商品データが読み込まれていません');
+        return;
+    }
+    
+    const currentCategory = getCurrentCategory();
+    const products = productData[currentCategory];
+    
+    if (!products || products.length === 0) {
+        console.log(`カテゴリー "${currentCategory}" のデータが見つかりません`);
+        return;
+    }
+    
+    // 最初の商品を表示
+    const firstProduct = products[0];
+    if (firstProduct) {
+        setProductImage(firstProduct.image);
+        setProductTitle(firstProduct.title);
+        setProductPrice(firstProduct.price);
+        setAllergyInfo(firstProduct.allergies);
+    }
+}
+
 // 時間に応じて遷移先を決定する関数
 function getTimeBasedRedirect() {
     const now = new Date();
@@ -108,10 +158,23 @@ function setAllergyInfo(allergies) {
     const allergyList = document.querySelector('.product-list-allergy-list');
     if (allergyList && allergies) {
         allergyList.innerHTML = '';
+        
+        // アレルギー画像のマッピング
+        const allergyImageMap = {
+            'buckwheat': '../../../images/buckwheat.png',
+            'Crab': '../../../images/Crab.png',
+            'egg': '../../../images/egg.png',
+            'milk': '../../../images/milk.png',
+            'peanut': '../../../images/peanut.png',
+            'Shrimp': '../../../images/Shrimp.png',
+            'walnut': '../../../images/walnut.png',
+            'wheat': '../../../images/wheat.png'
+        };
+        
         allergies.forEach(allergy => {
             const li = document.createElement('li');
             const img = document.createElement('img');
-            img.src = `../../../images/${allergy}.png`;
+            img.src = allergyImageMap[allergy] || `../../../images/${allergy}.png`;
             img.alt = `${allergy}の画像`;
             li.appendChild(img);
             allergyList.appendChild(li);
@@ -119,11 +182,28 @@ function setAllergyInfo(allergies) {
     }
 }
 
-document.addEventListener('DOMContentLoaded',()=>{
-    // 現在の時刻を表示（デバッグ用）
-    const now = new Date();
-    const currentTime = now.toLocaleTimeString('ja-JP');
-    console.log(`ProductList読み込み完了 - 現在時刻: ${currentTime}`);
-    
-    productClickAction();
+// 初期化処理
+async function initializeProductList() {
+    try {
+        // 現在の時刻を表示（デバッグ用）
+        const now = new Date();
+        const currentTime = now.toLocaleTimeString('ja-JP');
+        console.log(`ProductList読み込み完了 - 現在時刻: ${currentTime}`);
+        
+        // JSONファイルを読み込み
+        await loadProductData();
+        
+        // 商品データを表示
+        displayProductData();
+        
+        // クリックイベントを設定
+        productClickAction();
+        
+    } catch (error) {
+        console.error('ProductList初期化エラー:', error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initializeProductList();
 });
