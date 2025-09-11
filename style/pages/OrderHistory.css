@@ -1,0 +1,139 @@
+.order-history-item img{
+    width: 110px;
+    height: 76px;
+    border-radius: 11px;
+    object-fit: cover;
+}
+.order-history-item{
+    width: 1050px;
+}
+.order-history-item-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid var(--color-orange);
+    box-shadow: var(--drop-shadow);
+    border-radius: 11px;
+    background-color: var(--color-white);
+    padding: 20px 30px;
+    width: 667px;
+    height: 76px;
+    & span{
+        font-size: var(--font-p-small);
+    }
+}
+.order-history-item-count{
+    width: 180px;
+    height: 76px;
+    background-color: var(--color-green);
+    border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & span{
+        font-size: var(--font-p-small);
+    }
+}
+.order-history-total-price{
+    display: flex;
+    padding: 20px 30px;
+    box-shadow: var(--drop-shadow);
+    border-radius: 11px;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+    height: 110px;
+    & span{
+        font-size: var(--font-p-small);
+    }
+}
+.order-history-total-price-container,
+.order-history-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-history-page .back-container {
+    background-color: var(--color-brown);
+    & h3{
+        color: var(--color-white);
+    }
+}
+.order-history-page{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* スクロール可能なコンテナ */
+.order-history-container {
+    display: block;
+    width: 1190px;
+    height: 448px;
+    border: 1px solid var(--color-black);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 30px;
+}
+
+/* スクロール可能なリスト */
+.order-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    padding-right: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-orange) var(--color-gray);
+}
+
+/* Webkit系ブラウザ用のスクロールバー */
+.order-history-list::-webkit-scrollbar {
+    width: 30px;
+}
+
+.order-history-list::-webkit-scrollbar-track {
+    background: var(--color-gray);
+    border-radius: 6px;
+}
+
+.order-history-list::-webkit-scrollbar-thumb {
+    background-color: var(--color-orange);
+    border-radius: 6px;
+    border: 2px solid var(--color-gray);
+}
+
+/* サイドバーのスタイル */
+.side-bar{
+    width: 30px;
+    height: 410px;
+    border: 1px solid var(--color-black);
+    border-radius: 15px;
+    background-color: var(--color-white);
+    position: absolute; 
+    right: 30px; 
+    top: 20px; 
+    flex-shrink: 0; 
+    align-self: flex-start; 
+    margin-left: auto; 
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.inner-side-bar{
+    width: 100%;
+    height: 45px;
+    border-radius: 15px;
+    background-color: var(--color-black);
+    display: block;
+    position: absolute;
+    top: 0;
+    transition: transform 0.1s ease;
+    cursor: pointer;
+}
